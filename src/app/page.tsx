@@ -88,7 +88,7 @@ export default function Home() {
             <div className="mt-6 p-4 bg-white/5 rounded-lg border border-white/10">
               <h4 className="text-center text-white font-medium mb-3">Don't see your school?</h4>
               <form
-                action="https://formspree.io/f/YOUR_FORM_ID"
+                action="https://formspree.io/f/mkgqnova"
                 method="POST"
                 className="flex flex-col sm:flex-row gap-3 items-center justify-center"
               >

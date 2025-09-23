@@ -20,7 +20,7 @@ export default function EmailSignup() {
 
     try {
       // Send email to Formspree (free service that emails submissions to you)
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const response = await fetch('https://formspree.io/f/mkgqnova', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
