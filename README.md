@@ -92,6 +92,8 @@ This project is optimized for deployment on Vercel:
 
 Live at: [analytiqcampus.com](https://analytiqcampus.com)
 
+**Status**: Production deployment active
+
 ## 📝 Environment Variables
 
 ```bash
