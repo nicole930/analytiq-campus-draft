@@ -30,7 +30,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link href="/" className="text-white text-2xl font-bold hover:text-yellow-300 transition-colors">
-            AnalytiQ Campus
+            AnalytIQ Campus
           </Link>
 
           {/* University Selector */}

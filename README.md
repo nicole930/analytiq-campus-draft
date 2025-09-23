@@ -1,4 +1,4 @@
-# AnalytiQ Campus 🏆
+# AnalytIQ Campus 🏆
 
 > Fantasy sports platform for university athletic programs
 

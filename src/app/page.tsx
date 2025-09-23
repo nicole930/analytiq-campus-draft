@@ -154,7 +154,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-blue-900/50 text-center py-8 text-blue-200">
-        <p>&copy; 2024 AnalytiQ Campus. Bringing fantasy sports to universities nationwide.</p>
+        <p>&copy; 2024 AnalytIQ Campus. Bringing fantasy sports to universities nationwide.</p>
         <p className="text-sm mt-2">Starting with University of Rhode Island • More schools coming soon</p>
       </footer>
     </Layout>
