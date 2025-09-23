@@ -87,16 +87,23 @@ export default function Home() {
             </div>
             <div className="mt-6 p-4 bg-white/5 rounded-lg border border-white/10">
               <h4 className="text-center text-white font-medium mb-3">Don't see your school?</h4>
-              <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
+              <form
+                action="https://formspree.io/f/YOUR_FORM_ID"
+                method="POST"
+                className="flex flex-col sm:flex-row gap-3 items-center justify-center"
+              >
                 <input
                   type="text"
+                  name="university"
                   placeholder="Enter your university name..."
                   className="px-4 py-2 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300 flex-1 max-w-xs"
+                  required
                 />
-                <button className="bg-yellow-400 text-blue-900 px-6 py-2 rounded-lg font-semibold hover:bg-yellow-300 transition-colors">
+                <input type="hidden" name="_subject" value="New University Request - AnalytIQ Campus" />
+                <button type="submit" className="bg-yellow-400 text-blue-900 px-6 py-2 rounded-lg font-semibold hover:bg-yellow-300 transition-colors">
                   Request School
                 </button>
-              </div>
+              </form>
               <p className="text-center text-blue-200 text-xs mt-3">
                 Or email us at support@analytiqcampus.com
               </p>

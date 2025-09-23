@@ -19,9 +19,23 @@ export default function EmailSignup() {
     setStatus('loading');
 
     try {
-      // For now, we'll just simulate the signup
-      // In production, you'd send this to your backend or email service
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send email to Formspree (free service that emails submissions to you)
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          subject: 'New AnalytIQ Campus Early Access Signup',
+          message: `New user signed up for early access: ${email}`,
+          _replyto: email,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit');
+      }
 
       setStatus('success');
       setMessage('Thanks for signing up! You\'ll be the first to know when we launch.');
