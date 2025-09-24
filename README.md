@@ -8,6 +8,7 @@ Create your ultimate fantasy team from University of Rhode Island's athletic pro
 
 - **Multi-Sport Draft**: Football, Basketball, Baseball, Soccer, Track & Field, Swimming, Tennis, Volleyball
 - **AI-Powered Search**: Find athletes using natural language queries
+- **AI Competitors**: Get started against AI agents or friends of your own
 - **Real-Time Scoring**: Points based on actual player performance stats
 - **University Focus**: Starting with URI, expanding to more schools
 - **Email Collection**: Early access signup for launch updates
