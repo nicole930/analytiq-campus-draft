@@ -6,10 +6,11 @@ import { useState } from 'react';
 import UniversitySelector from './UniversitySelector';
 import { University } from '@/types/university';
 import { defaultUniversity } from '@/data/universities';
+import { useAuth } from '@/components/auth/AuthProvider';
 
 export default function Navigation() {
   const pathname = usePathname();
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Mock auth state
+  const { user, loading } = useAuth();
   const [selectedUniversity, setSelectedUniversity] = useState<University>(defaultUniversity);
 
   const navItems = [
@@ -19,10 +20,6 @@ export default function Navigation() {
     { name: 'My Team', href: '/team' },
     { name: 'Leaderboard', href: '/leaderboard' }
   ];
-
-  const mockLogin = () => {
-    setIsLoggedIn(!isLoggedIn);
-  };
 
   return (
     <nav className="bg-white/10 backdrop-blur-sm border-b border-white/20">
@@ -58,30 +55,38 @@ export default function Navigation() {
 
           {/* Auth Buttons */}
           <div className="flex gap-4">
-            {isLoggedIn ? (
+            {loading ? (
+              <div className="w-20 h-8 bg-white/20 animate-pulse rounded"></div>
+            ) : user ? (
               <div className="flex items-center gap-4">
-                <span className="text-white">Welcome, Fan!</span>
-                <button
-                  onClick={mockLogin}
+                <span className="text-white">Welcome, {user.email?.split('@')[0]}</span>
+                <Link
+                  href="/account"
+                  className="text-white hover:text-yellow-300 transition-colors"
+                >
+                  Account
+                </Link>
+                <Link
+                  href="/logout"
                   className="text-white hover:text-yellow-300 transition-colors"
                 >
                   Logout
-                </button>
+                </Link>
               </div>
             ) : (
               <div className="flex gap-2">
-                <button
-                  onClick={mockLogin}
+                <Link
+                  href="/login"
                   className="text-white hover:text-blue-200 transition-colors px-4 py-2"
                 >
                   Login
-                </button>
-                <button
-                  onClick={mockLogin}
+                </Link>
+                <Link
+                  href="/login"
                   className="bg-white text-blue-900 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
                 >
                   Sign Up
-                </button>
+                </Link>
               </div>
             )}
           </div>
